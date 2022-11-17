@@ -4,11 +4,10 @@ import java.util.Random;
 
 public class Prodotto {
 	
-	Random rnd = new Random();
 	
 	int codice;
 	int prezzo;
-	int iva = 20;
+	int iva;
 	String nome;
 	String descrizione;
 	
@@ -16,7 +15,9 @@ public class Prodotto {
 		this.nome = nome;
 		this.descrizione = descrizione;
 		this.prezzo = prezzo;
-		this.codice = rnd.nextInt(10000, 99999);		
+		iva = 20;
+		Random rnd = new Random();
+		this.codice = rnd.nextInt(10000, 100000); //numero casuale di 5 cifre
 	}
 	
 	public int mostraPrezzo() {
